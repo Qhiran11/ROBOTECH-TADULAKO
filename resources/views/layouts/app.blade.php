@@ -9,74 +9,36 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --rt-yellow: #ffd700; /* Warna kuning dari logo RT */
-            --rt-red: #e74c3c;     /* Warna merah sebagai aksen */
-            --rt-dark: #1e1e1e;   /* Warna gelap yang modern */
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
-        }
-
-        /* Styling Navbar */
-        .navbar {
-            background-color: var(--rt-dark) !important;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-
-        .navbar-brand {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            color: var(--rt-yellow) !important;
-        }
-
-        .nav-link {
-            font-weight: 700;
-        }
-
-        .nav-link:hover {
-            color: var(--rt-yellow) !important;
-        }
-
-        /* Styling Tombol Utama */
-        .btn-primary {
-            background-color: var(--rt-yellow);
-            border-color: var(--rt-yellow);
-            color: var(--rt-dark);
-            font-weight: 700;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .btn-primary:hover {
-            background-color: #e6c300;
-            border-color: #e6c300;
-            transform: scale(1.05);
-        }
-
-        /* Styling Footer */
-        .footer {
-            background-color: var(--rt-dark);
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/custom-style.css') }}">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="top-header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i> info@robotechtadulako.org
+            </div>
+            <div class="untad-logo-wrapper">
+                <span>Didukung oleh:</span>
+                <img src="{{ asset('images/logo-untad.png') }}" alt="Logo Universitas Tadulako" class="untad-logo">
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top main-navbar">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
-                <img src="{{ asset('images/logo-robotech.png') }}" alt="Logo Robotech" style="height: 40px;" class="me-2">
-                ROBOTECH
+            <a class="navbar-brand" href="{{ route('home') }}">
+                <img src="{{ asset('images/logo-robotech.png') }}" alt="Logo Robotech" class="robotech-logo-nav">
+                ROBOTECH TADULAKO
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('posts.index') }}">Berita</a></li>
@@ -89,22 +51,38 @@
         </div>
     </nav>
 
-    <main class="container my-5">
+    <main>
         @yield('content')
     </main>
 
-    <footer class="footer text-white text-center p-4 mt-auto">
+    <footer class="footer mt-auto py-4">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4 text-md-start">
-                    <img src="{{ asset('images/logo-untad.png') }}" alt="Logo Untad" style="height: 50px;">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>ROBOTECH TADULAKO</h5>
+                    <p>Unit Kegiatan Mahasiswa Riset dan Teknologi Robotika, Universitas Tadulako.</p>
                 </div>
-                <div class="col-md-4">
-                    <p class="mb-0">&copy; {{ date('Y') }} ROBOTECH TADULAKO</p>
-                    <p class="mb-0 small">Unit Kegiatan Mahasiswa Universitas Tadulako</p>
+                <div class="col-md-4 mb-3">
+                    <h5>Tautan Cepat</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('about') }}">Tentang Kami</a></li>
+                        <li><a href="{{ route('posts.index') }}">Berita Terbaru</a></li>
+                        <li><a href="#">Pendaftaran Anggota</a></li>
+                    </ul>
                 </div>
-                <div class="col-md-4 text-md-end">
+                <div class="col-md-4 mb-3">
+                    <h5>Hubungi Kami</h5>
+                    <p>Sekretariat: Gedung UKM Universitas Tadulako, Palu, Sulawesi Tengah.</p>
+                    <div class="social-icons">
+                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
                     </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; {{ date('Y') }} ROBOTECH TADULAKO. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

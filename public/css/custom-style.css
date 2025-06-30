@@ -1,0 +1,87 @@
+:root {
+    --rt-yellow: #FFC900; /* Warna kuning yang lebih cerah dan modern */
+    --rt-dark: #212529;   /* Hitam standar bootstrap untuk konsistensi */
+    --rt-gray: #f8f9fa;
+    --rt-text: #333;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--rt-text);
+    background-color: #ffffff; /* Ganti background jadi putih bersih */
+}
+
+/* --- Top Header --- */
+.top-header {
+    background-color: var(--rt-gray);
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+    color: #6c757d;
+    border-bottom: 1px solid #e9ecef;
+}
+.untad-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.untad-logo {
+    height: 30px;
+}
+
+/* --- Navbar Utama --- */
+.main-navbar {
+    background-color: white !important;
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.navbar-brand {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--rt-dark) !important;
+    font-size: 1.4rem;
+}
+.robotech-logo-nav {
+    height: 35px;
+    margin-right: 10px;
+}
+.main-navbar .nav-link {
+    color: var(--rt-dark) !important;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.main-navbar .nav-link:hover, .main-navbar .nav-link.active {
+    color: var(--rt-yellow) !important;
+}
+
+/* --- Hero Section (di Halaman Beranda) --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x600.png?text=Latar+Belakang+Hero');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+}
+.hero-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--rt-dark);
+    color: #adb5bd;
+}
+.footer h5 {
+    color: var(--rt-yellow);
+    font-family: 'Orbitron', sans-serif;
+}
+.footer a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer a:hover {
+    color: white;
+}
+.footer .social-icons a {
+    font-size: 1.5rem;
+}
